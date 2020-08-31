@@ -1,6 +1,6 @@
 <?php
 
-class Mahasiswa_exit extends TestCase {
+class Mahasiswa_exit_test extends TestCase {
     /**
      * @test
      */
@@ -10,6 +10,6 @@ class Mahasiswa_exit extends TestCase {
         } catch (CIPHPUnitTestExitException $e) {
             $output = ob_get_clean();
         }
-        $this->assertResponseCode(400);
+        $this->assertResponseCode(200);
     }    
 }
