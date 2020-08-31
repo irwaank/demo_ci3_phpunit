@@ -75,8 +75,8 @@ class Mahasiswa extends CI_Controller {
         $this->output
 			->set_status_header(200)
 			->set_content_type('application/json', 'utf-8')
-			->set_output(json_encode(array('foo' => 'bar')))
-            ->_display();
-        exit(0);
+			->set_output(json_encode(array('foo' => 'bar')));
+            // ->_display();
+        // exit(0);
     }
 }
