@@ -1,7 +1,7 @@
 {
     "require-dev": {
-        "kenjis/ci-phpunit-test": "dev-master",
-        "phpunit/phpunit": "^7.5",
+        "phpunit/phpunit": "^6.5",
+        "kenjis/ci-phpunit-test": "^0.18.0",
         "nikic/php-parser": "4.2.5"
     }
 }

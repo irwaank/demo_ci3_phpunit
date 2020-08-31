@@ -3,6 +3,8 @@
 class Mahasiswa_exit_test extends TestCase {
     /**
      * @test
+     * @testdox because the controller end with exit, this controller never counted as tested in coverage
+     * @codeCoverageIgnore
      */
     public function it_should_return_200() {
         try {
