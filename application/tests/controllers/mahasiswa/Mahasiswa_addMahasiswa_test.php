@@ -9,13 +9,14 @@ class Mahasiswa_addMahasiswa_test extends TestCase {
     /**
      * @testdox init mahasiswa with seeds 3 data
      */
-     public static function setUpBeforeClass() {
+    public static function setUpBeforeClass() {
 		parent::setUpBeforeClass();
 
         $CI =& get_instance();
         $CI->load->library('Seeder');
         $CI->seeder->setPath(APPPATH.'tests/database_seeds/');
-		$CI->seeder->call('MahasiswaSeeder');
+        $CI->seeder->call('MahasiswaSeeder');
+        self::assertTrue(true);
     }
 
     /**
@@ -24,6 +25,7 @@ class Mahasiswa_addMahasiswa_test extends TestCase {
     public function setUp() {
         $this->output = NULL;
         $this->new_mahasiswa = array('name' => 'Irwan');
+        self::assertTrue(true);
     }    
 
     /**
@@ -48,9 +50,14 @@ class Mahasiswa_addMahasiswa_test extends TestCase {
     public function it_should_return_400_with_http_method_get() {
         $this->exec('GET');
         
-        $this->assertResponseCode(400);
-        $this->assertIsObject($this->output);
+        $this->assertResponseCode(400);        
         $this->assertEquals('failure', $this->output->status);
+
+        // PHPUnit 7^
+        #$this->assertIsObject($this->output);
+        
+        // PHPUnit 6^
+        $this->assertEquals(TRUE, is_object($this->output));
     }
 
     /**
@@ -120,8 +127,13 @@ class Mahasiswa_addMahasiswa_test extends TestCase {
         
         $this->assertResponseCode(201);
         $this->assertGreaterThan(0, count($this->output->data));
-        $this->assertEquals('success', $this->output->status);
-        $this->assertIsInt($this->output->data->inserted_id);
+        $this->assertEquals('success', $this->output->status);        
+
+        // PHPUnit 7^
+        #$this->assertIsInt($this->output->data->inserted_id);
+        
+        // PHPUnit 6^
+        $this->assertEquals(TRUE, is_integer($this->output->data->inserted_id));
     }
 
     /**
@@ -131,6 +143,7 @@ class Mahasiswa_addMahasiswa_test extends TestCase {
         $CI =& get_instance();
         $CI->load->database();
         $CI->db->truncate('mahasiswa');
+        self::assertTrue(true);
     }
 }
 ?>

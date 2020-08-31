@@ -2,7 +2,8 @@
 	bootstrap="./Bootstrap.php"
 	backupGlobals="true"
 	colors="true"
-	verbose="true">
+	verbose="true"
+	stopOnFailure="true">
 	<testsuites>
 		<testsuite name="CodeIgniter Application Test Suite">
 			<directory suffix="test.php">./</directory>
@@ -19,9 +20,9 @@
 			<directory suffix=".php">../hooks</directory>
 		</whitelist>
 	</filter>
-	<logging>
+	<!-- <logging>
 		<log type="coverage-html" target="build/coverage"/>
 		<log type="coverage-clover" target="build/logs/clover.xml"/>
 		<log type="junit" target="build/logs/junit.xml"/>
-	</logging>
+	</logging> -->
 </phpunit>

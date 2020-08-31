@@ -4,9 +4,9 @@ What is this Repository
 
 The repository purpose is to demo Codeigniter with PHPUnit.
 
-PHP version 7.1
-PHPUnit version 7.5
-kenji/ci-phpunit-test version dev-master
+PHP version 7.0.33
+PHPUnit version 6.5
+kenji/ci-phpunit-test version 0.18
 
 *********
 Resources
